@@ -4,10 +4,6 @@ body{
     scroll-behavior: smooth;
 }
 
-*{
-    box-sizing: border-box;
-}
-
 ul{
     list-style: none;
 }
@@ -16,22 +12,18 @@ a{
     text-decoration: none;
 }
 
-.main{
-    width: 100%;
-    height: 100vh;
-    position: relative;
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 3px;
 }
-
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 5px 10px rgba(0,0,0,0.02);
-    position: fixed;
-    left: 0;
-    top: 0;
     width: 100%;
-    z-index: 1;
     background: #ffffff;
 }
 
@@ -58,6 +50,7 @@ nav ul li a:hover{
     color: #ffffff;
     box-shadow: 5px 10px 30px rgba(64, 198, 196, 0.3);
     transition: all ease 0.2s;
+    border-bottom: none;
 }
 
 .logo{
@@ -72,31 +65,34 @@ nav ul li a:hover{
     padding: 0 5px;
 }
 
-.model img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.main{
+    position: relative;
 }
 
 .model{
-    width: 500px;
-    height: 500px;
+    height: 400px;
+    padding-right: 100px;
+}
+
+.model img{
+    height: 100%;
 }
 
 .content{
-    width: 100%;
-    display: flex;
+    margin: 40px;
+    /*width: 905px;
     justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    left: 50%;
+    align-items: center;*/
+    display: flex;
+    justify-content: center;
+    /*left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);*/
 }
 
-.main-text{
+/*.main-text{
     width: 500px;
-}
+}*/
 
 .main-text h3{
     font-size: 3.5rem;
@@ -131,11 +127,6 @@ nav ul li a:hover{
     background: #1d7f8c;
 }
 
-.contentBx{
-    display: flex;
-    justify-content: space-around;
-}
-
 .title{
     padding: 20px;
     position: relative;
@@ -146,21 +137,30 @@ nav ul li a:hover{
     text-align: center;
 }
 
+.contentBx{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
 .contentAbout{
     width: 500px;
     height: 500px;
-    padding: 50px;
+    padding-right: 50px;
 }
 
 .contentAbout p{
     color: #ffffff;
 }
 
-.imgBx img{
-    width: 500px;
+.imgBx{
+    width: 400px;
     height: 500px;
-    object-fit: contain;
-    padding-bottom: 20px;
+}
+
+.imgBx img{
+    width: 100%;
+    height: 100%;
 }
 
 .teamBX{
@@ -303,7 +303,6 @@ nav ul li a:hover{
 
 .contact{
     position: relative;
-    min-width: 100vh;
     padding: 50px 100px;
     display: flex;
     justify-content: center;
@@ -326,15 +325,13 @@ nav ul li a:hover{
 .container{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
+    justify-content: space-between;
 }
 
 .container .contactInfo{
-    width: 50%;
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .container .contactInfo .box{
@@ -393,7 +390,6 @@ nav ul li a:hover{
 
 .contactForm{
     width: 50%;
-    padding: 40px;
 }
 
 .contactForm h2{
@@ -406,7 +402,7 @@ nav ul li a:hover{
 .contactForm .inputBox{
     position: relative;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .contactForm input,
@@ -430,7 +426,7 @@ nav ul li a:hover{
     padding: 5px 0;
     font-size: 20px;
     font-weight: 500;
-    margin: 10px 0;
+    margin: 15px;
     pointer-events: none;
     transition: 0.2s;
 }
@@ -441,6 +437,7 @@ nav ul li a:hover{
 .contactForm .inputBox textarea:valid ~ span{
     color: #ff5e79;
     font-size: 20px;
+    padding-top: 10px;
     transform: translateY(-25px);
 }
 
@@ -450,7 +447,8 @@ nav ul li a:hover{
     color: #fff;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    margin-top: 60px;
+    margin-left: 40%;
     font-size: 18px;
 }
 
@@ -473,4 +471,28 @@ nav ul li a:hover{
 .copyright .nameCopyright{
     font-size: 13px;
     margin: 0;
+}
+
+@media(max-width: 600px){
+    nav{
+     display: none;
+    }
+    .model img{
+        display: none;
+    }
+    .AboutMe .contentBx{
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        padding-right: 50px;
+        justify-content: center;
+    }
+    .AboutMe .contentBx img{
+        width: 300px;
+        height: 400px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
 }
